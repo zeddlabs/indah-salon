@@ -1,0 +1,33 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+use App\Models\Jabatan;
+use App\Models\Karyawan;
+
+class KaryawanFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Karyawan::class;
+
+    /**
+     * Define the model's default state.
+     */
+    public function definition(): array
+    {
+        return [
+            'id_jabatan' => Jabatan::factory()->create()->id_jabatan,
+            'nama' => $this->faker->word(),
+            'alamat' => $this->faker->text(),
+            'no_telp' => $this->faker->word(),
+            'email' => $this->faker->safeEmail(),
+            'jabatan_id' => Jabatan::factory(),
+        ];
+    }
+}
