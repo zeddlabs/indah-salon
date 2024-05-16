@@ -27,7 +27,6 @@ class LayananFactory extends Factory
             'deskripsi' => $this->faker->text(),
             'harga' => $this->faker->randomFloat(2, 0, 999999.99),
             'durasi' => $this->faker->numberBetween(-10000, 10000),
-            'kategori_layanan_id' => KategoriLayanan::factory(),
         ];
     }
 }

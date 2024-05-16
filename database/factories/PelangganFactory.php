@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Pelanggan;
+use Illuminate\Support\Facades\Hash;
 
 class PelangganFactory extends Factory
 {
@@ -26,7 +27,8 @@ class PelangganFactory extends Factory
             'no_telp' => $this->faker->word(),
             'email' => $this->faker->safeEmail(),
             'tanggal_lahir' => $this->faker->date(),
-            'jenis_kelamin' => $this->faker->randomElement(["Laki-laki","Perempuan"]),
+            'jenis_kelamin' => $this->faker->randomElement(["Laki-laki", "Perempuan"]),
+            'password' => Hash::make('password'),
         ];
     }
 }

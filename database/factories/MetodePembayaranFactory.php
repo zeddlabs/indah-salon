@@ -24,7 +24,6 @@ class MetodePembayaranFactory extends Factory
         return [
             'id_rekening' => Rekening::factory()->create()->id_rekening,
             'nama_metode' => $this->faker->word(),
-            'rekening_id' => Rekening::factory(),
         ];
     }
 }

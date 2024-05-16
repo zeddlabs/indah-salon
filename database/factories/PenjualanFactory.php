@@ -31,8 +31,6 @@ class PenjualanFactory extends Factory
             'status_pesanan' => $this->faker->randomElement(["Menunggu"]),
             'status_pembayaran' => $this->faker->randomElement(["Belum"]),
             'bukti_pembayaran' => $this->faker->word(),
-            'pelanggan_id' => Pelanggan::factory(),
-            'metode_pembayaran_id' => MetodePembayaran::factory(),
         ];
     }
 }

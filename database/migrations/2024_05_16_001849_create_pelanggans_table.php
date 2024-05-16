@@ -22,7 +22,7 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->enum('jenis_kelamin', ["Laki-laki", "Perempuan"]);
             $table->string('password');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
 

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Jabatan;
 use App\Models\Karyawan;
+use Illuminate\Support\Facades\Hash;
 
 class KaryawanFactory extends Factory
 {
@@ -26,8 +27,9 @@ class KaryawanFactory extends Factory
             'nama' => $this->faker->word(),
             'alamat' => $this->faker->text(),
             'no_telp' => $this->faker->word(),
+            'jenis_kelamin' => $this->faker->randomElement(["Laki-laki", "Perempuan"]),
             'email' => $this->faker->safeEmail(),
-            'jabatan_id' => Jabatan::factory(),
+            'password' => Hash::make('password'),
         ];
     }
 }

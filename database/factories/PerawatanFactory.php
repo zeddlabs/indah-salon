@@ -31,9 +31,6 @@ class PerawatanFactory extends Factory
             'jam_perawatan' => $this->faker->time(),
             'catatan' => $this->faker->text(),
             'biaya_perawatan' => $this->faker->randomFloat(2, 0, 999999.99),
-            'pelanggan_id' => Pelanggan::factory(),
-            'layanan_id' => Layanan::factory(),
-            'karyawan_id' => Karyawan::factory(),
         ];
     }
 }

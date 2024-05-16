@@ -27,8 +27,6 @@ class DetailPenjualanFactory extends Factory
             'id_produk' => Produk::factory()->create()->id_produk,
             'jumlah_produk' => $this->faker->numberBetween(-10000, 10000),
             'harga' => $this->faker->randomFloat(2, 0, 999999.99),
-            'penjualan_id' => Penjualan::factory(),
-            'produk_id' => Produk::factory(),
         ];
     }
 }
