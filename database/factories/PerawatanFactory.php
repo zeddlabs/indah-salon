@@ -30,7 +30,7 @@ class PerawatanFactory extends Factory
             'tanggal_perawatan' => $this->faker->date(),
             'jam_perawatan' => $this->faker->time(),
             'catatan' => $this->faker->text(),
-            'biaya_perawatan' => $this->faker->randomFloat(2, 0, 999999.99),
+            'biaya_perawatan' => $this->faker->randomNumber(8),
         ];
     }
 }

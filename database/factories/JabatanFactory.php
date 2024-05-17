@@ -22,7 +22,7 @@ class JabatanFactory extends Factory
     {
         return [
             'nama_jabatan' => $this->faker->word(),
-            'gaji' => $this->faker->randomFloat(2, 0, 999999.99),
+            'gaji' => $this->faker->randomNumber(8)
         ];
     }
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('id_metode_pembayaran')->constrained('metode_pembayaran');
             $table->string('invoice');
             $table->date('tanggal_pesanan');
-            $table->decimal('total_biaya', 8, 2);
+            $table->bigInteger('total_biaya');
             $table->enum('status_pesanan', ["Menunggu"]);
             $table->enum('status_pembayaran', ["Belum"]);
             $table->string('bukti_pembayaran');

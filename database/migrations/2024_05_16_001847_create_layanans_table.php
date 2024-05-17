@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('id_kategori_layanan')->constrained('kategori_layanan');
             $table->string('nama_layanan');
             $table->text('deskripsi');
-            $table->decimal('harga', 8, 2);
+            $table->integer('harga')->unsigned();
             $table->integer('durasi');
             $table->timestamps();
         });

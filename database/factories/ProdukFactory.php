@@ -23,8 +23,8 @@ class ProdukFactory extends Factory
         return [
             'nama_produk' => $this->faker->word(),
             'deskripsi' => $this->faker->text(),
-            'harga' => $this->faker->randomFloat(2, 0, 999999.99),
-            'stok' => $this->faker->numberBetween(-10000, 10000),
+            'harga' => $this->faker->randomNumber(7),
+            'stok' => $this->faker->numberBetween(1, 100),
         ];
     }
 }

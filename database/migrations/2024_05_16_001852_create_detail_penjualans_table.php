@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('id_penjualan')->constrained('penjualan');
             $table->foreignId('id_produk')->constrained('produk');
             $table->integer('jumlah_produk');
-            $table->decimal('harga', 8, 2);
+            $table->integer('harga')->unsigned();
             $table->timestamps();
         });
 

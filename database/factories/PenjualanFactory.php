@@ -27,7 +27,7 @@ class PenjualanFactory extends Factory
             'id_metode_pembayaran' => MetodePembayaran::factory()->create()->id_metode_pembayaran,
             'invoice' => $this->faker->word(),
             'tanggal_pesanan' => $this->faker->date(),
-            'total_biaya' => $this->faker->randomFloat(2, 0, 999999.99),
+            'total_biaya' => $this->faker->randomNumber(8),
             'status_pesanan' => $this->faker->randomElement(["Menunggu"]),
             'status_pembayaran' => $this->faker->randomElement(["Belum"]),
             'bukti_pembayaran' => $this->faker->word(),

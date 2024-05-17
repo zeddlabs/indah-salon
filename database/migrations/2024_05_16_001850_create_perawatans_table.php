@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('tanggal_perawatan');
             $table->time('jam_perawatan');
             $table->text('catatan');
-            $table->decimal('biaya_perawatan', 8, 2);
+            $table->bigInteger('biaya_perawatan');
             $table->timestamps();
         });
 
