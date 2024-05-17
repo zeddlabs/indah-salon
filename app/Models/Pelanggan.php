@@ -13,6 +13,22 @@ class Pelanggan extends Authenticatable
 
     protected $table = 'pelanggan';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'nama',
+        'alamat',
+        'no_telp',
+        'email',
+        'tanggal_lahir',
+        'jenis_kelamin',
+        'foto',
+        'password',
+    ];
+
     public function perawatan(): HasMany
     {
         return $this->hasMany(Perawatan::class);

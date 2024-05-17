@@ -22,20 +22,5 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-        Jabatan::create([
-            'nama_jabatan' => 'Owner',
-            'gaji' => 10000000,
-        ]);
-
-        Karyawan::create([
-            'id_jabatan' => 1,
-            'nama' => 'Admin',
-            'alamat' => 'Jl. Jalan',
-            'no_telp' => '08123456789',
-            'jenis_kelamin' => 'Perempuan',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('password'),
-        ]);
     }
 }

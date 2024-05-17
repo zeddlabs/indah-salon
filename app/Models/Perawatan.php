@@ -12,6 +12,21 @@ class Perawatan extends Model
 
     protected $table = 'perawatan';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'id_pelanggan',
+        'id_layanan',
+        'invoice',
+        'tanggal_perawatan',
+        'jam_perawatan',
+        'catatan',
+        'biaya_perawatan',
+    ];
+
     public function pelanggan(): BelongsTo
     {
         return $this->belongsTo(Pelanggan::class);
@@ -20,10 +35,5 @@ class Perawatan extends Model
     public function layanan(): BelongsTo
     {
         return $this->belongsTo(Layanan::class);
-    }
-
-    public function karyawan(): BelongsTo
-    {
-        return $this->belongsTo(Karyawan::class);
     }
 }

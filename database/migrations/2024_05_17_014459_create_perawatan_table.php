@@ -13,16 +13,15 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('pelanggan', function (Blueprint $table) {
+        Schema::create('perawatan', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->text('alamat');
-            $table->string('no_telp');
-            $table->string('email');
-            $table->date('tanggal_lahir');
-            $table->enum('jenis_kelamin', ["Laki-laki", "Perempuan"]);
-            $table->string('password');
-            $table->string('foto')->nullable();
+            $table->foreignId('id_pelanggan')->constrained('pelanggan');
+            $table->foreignId('id_layanan')->constrained('layanan');
+            $table->string('invoice');
+            $table->date('tanggal_perawatan');
+            $table->time('jam_perawatan');
+            $table->text('catatan');
+            $table->bigInteger('biaya_perawatan');
             $table->timestamps();
         });
 
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pelanggan');
+        Schema::dropIfExists('perawatan');
     }
 };

@@ -12,6 +12,18 @@ class DetailPenjualan extends Model
 
     protected $table = 'detail_penjualan';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'id_penjualan',
+        'id_produk',
+        'jumlah_produk',
+        'harga',
+    ];
+
     public function penjualan(): BelongsTo
     {
         return $this->belongsTo(Penjualan::class);

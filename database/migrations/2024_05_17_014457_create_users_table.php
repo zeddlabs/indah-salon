@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('produk', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_produk');
-            $table->text('deskripsi');
-            $table->integer('harga')->unsigned();
-            $table->integer('stok');
+            $table->string('nama');
+            $table->text('alamat');
+            $table->string('no_telp');
+            $table->string('foto')->nullable();
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
 
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produk');
+        Schema::dropIfExists('users');
     }
 };

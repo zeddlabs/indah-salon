@@ -13,6 +13,16 @@ class MetodePembayaran extends Model
 
     protected $table = 'metode_pembayaran';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'id_rekening',
+        'nama_metode',
+    ];
+
     public function rekening(): BelongsTo
     {
         return $this->belongsTo(Rekening::class);

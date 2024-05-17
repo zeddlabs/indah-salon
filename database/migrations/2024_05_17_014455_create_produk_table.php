@@ -11,12 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jabatan', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('produk', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_jabatan');
-            $table->integer('gaji')->unsigned();
+            $table->string('nama_produk');
+            $table->text('deskripsi');
+            $table->unsignedInteger('harga');
+            $table->integer('stok');
+            $table->string('foto');
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -24,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jabatan');
+        Schema::dropIfExists('produk');
     }
 };
