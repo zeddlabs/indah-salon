@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\RekeningResource\Pages;
-use App\Filament\Resources\RekeningResource\RelationManagers;
-use App\Models\Rekening;
+use App\Filament\Resources\MetodePembayaranResource\Pages;
+use App\Filament\Resources\MetodePembayaranResource\RelationManagers;
+use App\Models\MetodePembayaran;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,32 +13,30 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class RekeningResource extends Resource
+class MetodePembayaranResource extends Resource
 {
-    protected static ?string $model = Rekening::class;
+    protected static ?string $model = MetodePembayaran::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-credit-card';
-    protected static ?string $slug = 'rekening';
+    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
+    protected static ?string $slug = 'metode-pembayaran';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Section::make('Form Rekening')
+                Forms\Components\Section::make('Form Metode Pembayaran')
                     ->description('Silahkan isi form berikut dengan data yang benar.')
                     ->schema([
-                        Forms\Components\TextInput::make('nama_bank')
-                            ->label('Nama Bank')
+                        Forms\Components\TextInput::make('nama_metode')
+                            ->label('Nama Metode')
+                            ->placeholder('Contoh: Transfer Bank BRI')
                             ->required()
                             ->maxLength(255),
-                        Forms\Components\TextInput::make('no_rekening')
-                            ->label('Nomor Rekening')
-                            ->required()
-                            ->maxLength(255),
-                        Forms\Components\TextInput::make('atas_nama')
-                            ->label('Atas Nama')
-                            ->required()
-                            ->maxLength(255),
+                        Forms\Components\Select::make('id_rekening')
+                            ->relationship('rekening', 'nama_bank')
+                            ->searchable()
+                            ->preload()
+                            ->required(),
                     ]),
             ]);
     }
@@ -47,11 +45,13 @@ class RekeningResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama_bank')
+                Tables\Columns\TextColumn::make('nama_metode')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('no_rekening')
+                Tables\Columns\TextColumn::make('rekening.nama_bank')
+                    ->label('Nama Bank')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('atas_nama')
+                Tables\Columns\TextColumn::make('rekening.no_rekening')
+                    ->label('Nomor Rekening')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Dibuat')
@@ -88,9 +88,9 @@ class RekeningResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListRekening::route('/'),
-            'create' => Pages\CreateRekening::route('/create'),
-            'edit' => Pages\EditRekening::route('/{record}/edit'),
+            'index' => Pages\ListMetodePembayaran::route('/'),
+            'create' => Pages\CreateMetodePembayaran::route('/create'),
+            'edit' => Pages\EditMetodePembayaran::route('/{record}/edit'),
         ];
     }
 }

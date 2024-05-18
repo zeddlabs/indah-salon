@@ -25,7 +25,7 @@ class MetodePembayaran extends Model
 
     public function rekening(): BelongsTo
     {
-        return $this->belongsTo(Rekening::class);
+        return $this->belongsTo(Rekening::class, 'id_rekening');
     }
 
     public function penjualan(): HasMany
