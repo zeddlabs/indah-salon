@@ -40,7 +40,9 @@ class PelangganResource extends Resource
                             ->required()
                             ->columnSpanFull(),
                         Forms\Components\DatePicker::make('tanggal_lahir')
-                            ->required(),
+                            ->required()
+                            ->native(false)
+                            ->displayFormat('d F Y'),
                         Forms\Components\Select::make('jenis_kelamin')
                             ->options([
                                 'Laki-laki' => 'Laki-laki',
