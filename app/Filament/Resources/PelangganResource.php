@@ -129,4 +129,9 @@ class PelangganResource extends Resource
             'edit' => Pages\EditPelanggan::route('/{record}/edit'),
         ];
     }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 }
