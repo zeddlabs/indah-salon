@@ -67,11 +67,12 @@ class LayananResource extends Resource
                     ->label('Nama Layanan')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('harga')
-                    ->numeric()
+                    ->money('IDR', locale: 'id')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('durasi')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->suffix(' menit'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Dibuat')
                     ->dateTime()
