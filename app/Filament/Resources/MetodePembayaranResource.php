@@ -18,6 +18,8 @@ class MetodePembayaranResource extends Resource
     protected static ?string $model = MetodePembayaran::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-banknotes';
+    protected static ?string $navigationGroup = 'Manajemen Pembayaran';
+    protected static ?int $navigationSort = 1;
     protected static ?string $slug = 'metode-pembayaran';
 
     public static function form(Form $form): Form
