@@ -11,4 +11,6 @@
   <x-sections.product />
 
   <x-sections.contact />
+
+  <x-layouts.partials.footer />
 </x-layouts.app>

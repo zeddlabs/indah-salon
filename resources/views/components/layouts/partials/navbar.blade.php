@@ -15,7 +15,7 @@
         <li class="nav-item"><a href="#contact" class="nav-link">Kontak</a></li>
       </ul>
 
-      <a href="" class="btn btn-primary">Masuk</a>
+      <a href="" class="btn btn-primary" style="font-size: 14px">Masuk</a>
     </div>
   </div>
 </nav>

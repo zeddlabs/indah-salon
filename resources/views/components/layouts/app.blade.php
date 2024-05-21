@@ -26,13 +26,12 @@
   <link rel="stylesheet" href="{{ asset('landing_page/css/flaticon.css') }}">
   <link rel="stylesheet" href="{{ asset('landing_page/css/icomoon.css') }}">
   <link rel="stylesheet" href="{{ asset('landing_page/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('landing_page/css/custom.css') }}">
 </head>
 
 <body>
 
   {{ $slot }}
-
-  <x-layouts.partials.footer />
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
