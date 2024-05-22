@@ -15,7 +15,23 @@
         <li class="nav-item"><a href="#contact" class="nav-link">Kontak</a></li>
       </ul>
 
-      <a href="" class="btn btn-primary" style="font-size: 14px">Masuk</a>
+      @auth('pelanggan')
+        <a href="" class="ml-3 text-dark" style="font-size: 20px;"><i class="icon icon-shopping_cart"></i></a>
+
+        <div class="dropdown ml-3">
+          <a class="dropdown-toggle text-dark" style="font-size: 20px;" href="#" role="button"
+            data-toggle="dropdown" aria-expanded="false">
+            <i class="icon icon-user-circle-o"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#"><i class="icon icon-user-circle-o"></i> Profil</a>
+            <a class="dropdown-item" href="#"><i class="icon icon-clock-o"></i> Histori</a>
+            <a class="dropdown-item" href="{{ route('logout') }}"><i class="icon icon-sign-out"></i> Keluar</a>
+          </div>
+        </div>
+      @else
+        <a href="{{ route('login.index') }}" class="btn btn-primary" style="font-size: 14px">Masuk</a>
+      @endauth
     </div>
   </div>
 </nav>

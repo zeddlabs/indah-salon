@@ -12,7 +12,7 @@
           </a>
         </div>
         <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Salon Kecantikan</h1>
-        <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#layanan"
+        <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#services"
             class="btn btn-white btn-outline-white px-4 py-3">Telusuri Layanan Kami</a></p>
       </div>
     </div>

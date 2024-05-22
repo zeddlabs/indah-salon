@@ -7,8 +7,11 @@
             <div class="card-body">
               <h5 class="card-title">Masuk</h5>
               <h6 class="card-subtitle mb-2 text-muted">Selamat Datang</h6>
+              @session('status')
+                <p>{{ session('status') }}</p>
+              @endsession
               <hr>
-              <form action="" method="POST">
+              <form action="{{ route('login.authenticate') }}" method="POST">
                 @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
