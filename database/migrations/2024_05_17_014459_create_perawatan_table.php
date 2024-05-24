@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('invoice');
             $table->date('tanggal_perawatan');
             $table->time('jam_perawatan');
-            $table->text('catatan');
+            $table->text('catatan')->nullable();
             $table->bigInteger('biaya_perawatan');
             $table->timestamps();
         });

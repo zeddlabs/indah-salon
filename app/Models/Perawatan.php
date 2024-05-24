@@ -29,11 +29,11 @@ class Perawatan extends Model
 
     public function pelanggan(): BelongsTo
     {
-        return $this->belongsTo(Pelanggan::class);
+        return $this->belongsTo(Pelanggan::class, 'id_pelanggan');
     }
 
     public function layanan(): BelongsTo
     {
-        return $this->belongsTo(Layanan::class);
+        return $this->belongsTo(Layanan::class, 'id_layanan');
     }
 }

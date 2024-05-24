@@ -1,13 +1,12 @@
-<x-layouts.app title="Beranda">
+<x-layouts.app title="{{ $title }}">
   <x-hero />
 
   <x-layouts.partials.navbar />
   <!-- END nav -->
 
-  {{-- {{ dd(auth('pelanggan')->user()->nama) }} --}}
   <x-sections.about />
 
-  <x-sections.service />
+  <x-sections.service :services="$services" />
 
   <x-sections.product />
 

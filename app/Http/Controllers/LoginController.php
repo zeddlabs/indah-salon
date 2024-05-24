@@ -26,7 +26,7 @@ class LoginController extends Controller
         if (Auth::guard('pelanggan')->attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
 
-            return redirect('/');
+            return redirect()->intended('/');
         }
 
         return back()->with('status', 'Email atau password salah');

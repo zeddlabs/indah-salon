@@ -8,11 +8,11 @@
 
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="#home" class="nav-link">Beranda</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">Tentang</a></li>
-        <li class="nav-item"><a href="#services" class="nav-link">Layanan</a></li>
-        <li class="nav-item"><a href="#products" class="nav-link">Produk</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Kontak</a></li>
+        <li class="nav-item active"><a href="/#home" class="nav-link">Beranda</a></li>
+        <li class="nav-item"><a href="/#about" class="nav-link">Tentang</a></li>
+        <li class="nav-item"><a href="/#services" class="nav-link">Layanan</a></li>
+        <li class="nav-item"><a href="/#products" class="nav-link">Produk</a></li>
+        <li class="nav-item"><a href="/#contact" class="nav-link">Kontak</a></li>
       </ul>
 
       @auth('pelanggan')

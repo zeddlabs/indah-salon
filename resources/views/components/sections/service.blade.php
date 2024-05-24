@@ -7,42 +7,22 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 mb-3 ftco-animate">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+      @foreach ($services as $service)
+        <div class="col-md-4 mb-3 ftco-animate">
+          <div class="card">
+            <img src="{{ Storage::url($service->foto) }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ $service->nama_layanan }}</h5>
+              <p class="card-text">{{ $service->deskripsi }}</p>
+              <p class="card-text">Durasi : {{ $service->durasi }} menit</p>
+              <p class="card-text" style="font-weight: bold; font-size: 18px;">Rp
+                {{ number_format($service->harga, 2, ',', '.') }}</p>
+              <a href="{{ route('layanan.create', $service->id) }}"
+                class="btn btn-primary {{ !auth('pelanggan')->check() ? 'disabled' : '' }}">Pesan Sekarang</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 mb-3 ftco-animate">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3 ftco-animate">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>
