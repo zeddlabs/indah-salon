@@ -32,7 +32,7 @@ class LayananController extends Controller
 
         $pelanggan = Auth::guard('pelanggan')->user();
 
-        $invoice = 'INV' . $layanan->id . time() . $pelanggan->id;
+        $invoice = 'INV' . date('YmdHis');
 
         $perawatan = Perawatan::create([
             'id_pelanggan' => $pelanggan->id,

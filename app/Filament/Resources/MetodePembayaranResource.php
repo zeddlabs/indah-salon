@@ -48,6 +48,7 @@ class MetodePembayaranResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama_metode')
+                    ->label('Nama Metode')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('rekening.nama_bank')
                     ->label('Nama Bank')

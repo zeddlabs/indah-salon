@@ -49,10 +49,13 @@ class RekeningResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama_bank')
+                    ->label('Nama Bank')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('no_rekening')
+                    ->label('Nomor Rekening')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('atas_nama')
+                    ->label('Atas Nama')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Dibuat')
