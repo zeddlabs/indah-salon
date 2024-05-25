@@ -15,8 +15,12 @@ return new class extends Migration
 
         Schema::create('metode_pembayaran', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_rekening')->constrained('rekening');
+            $table->foreignId('id_rekening')
+                ->nullable()
+                ->constrained('rekening')
+                ->cascadeOnDelete();
             $table->string('nama_metode');
+            $table->enum('jenis_metode', ['Tunai', 'Transfer']);
             $table->timestamps();
         });
 

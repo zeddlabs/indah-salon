@@ -34,11 +34,18 @@ class MetodePembayaranResource extends Resource
                             ->placeholder('Contoh: Transfer Bank BRI')
                             ->required()
                             ->maxLength(255),
+                        Forms\Components\Select::make('jenis_metode')
+                            ->label('Jenis Metode')
+                            ->options([
+                                'Tunai' => 'Tunai',
+                                'Transfer' => 'Transfer',
+                            ])
+                            ->required()
+                            ->native(false),
                         Forms\Components\Select::make('id_rekening')
                             ->relationship('rekening', 'nama_bank')
                             ->searchable()
-                            ->preload()
-                            ->required(),
+                            ->preload(),
                     ]),
             ]);
     }
@@ -49,6 +56,9 @@ class MetodePembayaranResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nama_metode')
                     ->label('Nama Metode')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('jenis_metode')
+                    ->label('Jenis Metode')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('rekening.nama_bank')
                     ->label('Nama Bank')

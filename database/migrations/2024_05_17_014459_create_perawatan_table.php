@@ -15,8 +15,8 @@ return new class extends Migration
 
         Schema::create('perawatan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_pelanggan')->constrained('pelanggan');
-            $table->foreignId('id_layanan')->constrained('layanan');
+            $table->foreignId('id_pelanggan')->constrained('pelanggan')->cascadeOnDelete();
+            $table->foreignId('id_layanan')->constrained('layanan')->cascadeOnDelete();
             $table->string('invoice');
             $table->date('tanggal_perawatan');
             $table->time('jam_perawatan');

@@ -21,6 +21,7 @@ class MetodePembayaran extends Model
     protected $fillable = [
         'id_rekening',
         'nama_metode',
+        'jenis_metode',
     ];
 
     public function rekening(): BelongsTo

@@ -15,11 +15,11 @@ return new class extends Migration
 
         Schema::create('penjualan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_pelanggan')->constrained('pelanggan');
-            $table->foreignId('id_metode_pembayaran')->constrained('metode_pembayaran');
+            $table->foreignId('id_pelanggan')->constrained('pelanggan')->cascadeOnDelete();
+            $table->foreignId('id_metode_pembayaran')->constrained('metode_pembayaran')->cascadeOnDelete();
             $table->string('invoice');
             $table->date('tanggal_pesanan');
-            $table->foreignId('id_produk')->constrained('produk');
+            $table->foreignId('id_produk')->constrained('produk')->cascadeOnDelete();
             $table->integer('jumlah_produk');
             $table->bigInteger('total_biaya');
             $table->enum('status_pesanan', ["Menunggu Pembayaran", "Diproses", "Dikirim", "Selesai"]);

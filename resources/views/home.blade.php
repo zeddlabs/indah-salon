@@ -8,7 +8,7 @@
 
   <x-sections.service :services="$services" />
 
-  <x-sections.product />
+  <x-sections.product :products="$products" />
 
   <x-sections.contact />
 
