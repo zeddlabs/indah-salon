@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Penjualan extends Model
 {
@@ -23,6 +22,8 @@ class Penjualan extends Model
         'id_metode_pembayaran',
         'invoice',
         'tanggal_pesanan',
+        'id_produk',
+        'jumlah_produk',
         'total_biaya',
         'status_pesanan',
         'status_pembayaran',
@@ -31,16 +32,16 @@ class Penjualan extends Model
 
     public function pelanggan(): BelongsTo
     {
-        return $this->belongsTo(Pelanggan::class);
+        return $this->belongsTo(Pelanggan::class, 'id_pelanggan');
     }
 
-    public function metodePembayaran(): BelongsTo
+    public function metode_pembayaran(): BelongsTo
     {
-        return $this->belongsTo(MetodePembayaran::class);
+        return $this->belongsTo(MetodePembayaran::class, 'id_metode_pembayaran');
     }
 
-    public function produk(): BelongsToMany
+    public function produk(): BelongsTo
     {
-        return $this->belongsToMany(Produk::class, 'detail_penjualan', 'id_penjualan', 'id_produk')->withPivot('jumlah_produk', 'harga');
+        return $this->belongsTo(Produk::class, 'id_produk');
     }
 }

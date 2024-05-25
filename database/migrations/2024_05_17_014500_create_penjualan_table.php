@@ -19,10 +19,12 @@ return new class extends Migration
             $table->foreignId('id_metode_pembayaran')->constrained('metode_pembayaran');
             $table->string('invoice');
             $table->date('tanggal_pesanan');
+            $table->foreignId('id_produk')->constrained('produk');
+            $table->integer('jumlah_produk');
             $table->bigInteger('total_biaya');
-            $table->enum('status_pesanan', ["Menunggu"]);
-            $table->enum('status_pembayaran', ["Belum"]);
-            $table->string('bukti_pembayaran');
+            $table->enum('status_pesanan', ["Menunggu Pembayaran", "Diproses", "Dikirim", "Selesai"]);
+            $table->enum('status_pembayaran', ["Belum Dibayar", "Sudah Dibayar"]);
+            $table->string('bukti_pembayaran')->nullable();
             $table->timestamps();
         });
 

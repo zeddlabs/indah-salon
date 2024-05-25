@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Produk extends Model
 {
@@ -25,9 +25,8 @@ class Produk extends Model
         'foto',
     ];
 
-    public function penjualan(): BelongsToMany
+    public function penjualan(): HasMany
     {
-        return $this->belongsToMany(Penjualan::class, 'detail_penjualan', 'id_produk', 'id_penjualan')
-            ->withPivot('jumlah_produk', 'harga');
+        return $this->hasMany(Penjualan::class);
     }
 }
