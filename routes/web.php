@@ -23,3 +23,6 @@ Route::post('/produk/{produk}/order', [Controllers\ProdukController::class, 'ord
 Route::get('/produk/{penjualan:invoice}/invoice', [Controllers\ProdukController::class, 'invoice'])->name('produk.invoice');
 Route::get('/produk/{penjualan:invoice}/invoice/print', [Controllers\ProdukController::class, 'printInvoice'])->name('produk.invoice.print');
 Route::post('/produk/{penjualan:invoice}/invoice/upload', [Controllers\ProdukController::class, 'uploadPayment'])->name('produk.invoice.upload');
+
+Route::get('/penjualan/laporan', [Controllers\LaporanController::class, 'cetakPenjualan'])->name('laporan.penjualan');
+Route::get('/perawatan/laporan', [Controllers\LaporanController::class, 'cetakPerawatan'])->name('laporan.perawatan');

@@ -107,15 +107,15 @@ class PenjualanResource extends Resource
                 Tables\Columns\TextColumn::make('pelanggan.nama')
                     ->label('Nama Pelanggan')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('metode_pembayaran.nama_metode')
-                    ->label('Metode Pembayaran')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('tanggal_pesanan')
                     ->date('d F Y')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('total_biaya')
                     ->money('IDR', locale: 'id')
                     ->sortable(),
+                Tables\Columns\TextColumn::make('metode_pembayaran.nama_metode')
+                    ->label('Metode Pembayaran')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('status_pesanan'),
                 Tables\Columns\TextColumn::make('status_pembayaran'),
                 Tables\Columns\ImageColumn::make('bukti_pembayaran')
