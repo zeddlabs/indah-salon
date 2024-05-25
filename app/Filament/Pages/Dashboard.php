@@ -1,7 +1,7 @@
 <?php
 
+use App\Filament\Widgets;
 use Filament\Pages\Dashboard as BaseDashboard;
-use Filament\Widgets;
 
 class Dashboard extends BaseDashboard
 {
@@ -11,7 +11,9 @@ class Dashboard extends BaseDashboard
   public function getWidgets(): array
   {
     return [
-      Widgets\AccountWidget::class,
+      Widgets\StatsOverview::class,
+      Widgets\PenjualanChart::class,
+      Widgets\PerawatanChart::class,
     ];
   }
 }

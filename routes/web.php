@@ -26,3 +26,5 @@ Route::post('/produk/{penjualan:invoice}/invoice/upload', [Controllers\ProdukCon
 
 Route::get('/penjualan/laporan', [Controllers\LaporanController::class, 'cetakPenjualan'])->name('laporan.penjualan');
 Route::get('/perawatan/laporan', [Controllers\LaporanController::class, 'cetakPerawatan'])->name('laporan.perawatan');
+
+Route::post('/message', [Controllers\HomeController::class, 'sendMessage'])->name('message');

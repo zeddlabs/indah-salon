@@ -22,15 +22,16 @@
       </div>
       <div class="col-md-6 appointment pl-md-5 ftco-animate">
         <h3 class="mb-3">Kirim Pesan</h3>
-        <form action="#" class="appointment-form">
+        <form action="{{ route('message') }}" class="appointment-form" method="POST">
+          @csrf
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Nama">
+            <input type="text" class="form-control" placeholder="Nama" name="nama_pelanggan" required>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="No. Handphone">
+            <input type="text" class="form-control" placeholder="No. Handphone" name="no_telp" required>
           </div>
           <div class="form-group">
-            <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Pesan"></textarea>
+            <textarea name="pesan" id="" cols="30" rows="3" class="form-control" placeholder="Pesan" required></textarea>
           </div>
           <div class="form-group">
             <input type="submit" value="Kirim" class="btn btn-white btn-outline-white py-3 px-4">
